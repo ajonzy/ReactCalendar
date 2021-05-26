@@ -9,9 +9,10 @@ export default function content(props) {
     for (let i=0; i<props.startDay; i++) {
         calendarBoxes.push(
             <CalendarBox 
-                key={`${props.monthid}-${i}-P`} 
+                key={`${props.monthId}-${i}-P`} 
                 monthId={props.monthId} 
                 date={props.daysInPreviousMonth - (props.startDay - (i + 1))} 
+                overflow
             />
         )
     }
@@ -19,7 +20,7 @@ export default function content(props) {
     for (let i=1; i<=props.daysInMonth; i++) {
         calendarBoxes.push(
             <CalendarBox 
-                key={`${props.monthid}-${i}`} 
+                key={`${props.monthId}-${i}`} 
                 monthId={props.monthId} 
                 date={i} 
             />
@@ -29,9 +30,10 @@ export default function content(props) {
     for (let i=1; i<=(42 - props.daysInMonth) - props.startDay; i++) {
         calendarBoxes.push(
             <CalendarBox 
-                key={`${props.monthid}-${i}-N`} 
+                key={`${props.monthId}-${i}-N`} 
                 monthId={props.monthId} 
                 date={i} 
+                overflow
             />
         )
     }

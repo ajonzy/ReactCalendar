@@ -68,13 +68,14 @@ export default class CalendarBox extends Component {
 
     render() {
         return (
-            <div className="calendar-box">
+            <div className={`calendar-box ${this.props.overflow ? "overflow" : ""}`}>
                 <div className="date">{this.props.date}</div>
 
                 <textarea 
                     value={this.state.text} 
                     onChange={this.handleChange} 
                     onBlur={this.handleSumbit}
+                    disabled={this.props.overflow ? true : false}
                 ></textarea>
             </div>
         )
